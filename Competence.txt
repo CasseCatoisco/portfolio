@@ -1,0 +1,88 @@
+================================================================================
+RÉSUMÉ DES COMPÉTENCES ET UNITÉS D'ENSEIGNEMENT (UE)
+B.U.T. MESURES PHYSIQUES (MP)
+PARCOURS : TECHNIQUES D'INSTRUMENTATION (TI) - 3 ANS
+================================================================================
+
+Dans le cadre du Bachelor Universitaire de Technologie (B.U.T.), les Unités d'Enseignement (UE) correspondent directement aux cinq grandes compétences développées et évaluées durant les 3 années (6 semestres) de formation[cite: 58, 63].
+
+--------------------------------------------------------------------------------
+UE 1 / COMPÉTENCE 1 : MENER UNE CAMPAGNE DE MESURES
+--------------------------------------------------------------------------------
+Évolution sur les 3 ans :
+- Niveau 1 : Pour un nombre restreint de grandeurs[cite: 65].
+- Niveau 2 : Mesures multiples nécessitant un traitement complexe des données[cite: 65].
+- Niveau 3 : Campagne dans un contexte professionnel spécifique[cite: 65].
+
+Composantes essentielles (Savoir-agir) :
+- Choisir une démarche scientifique adaptée[cite: 95].
+- Élaborer un protocole adapté, respectant les règles de sécurité et normes en vigueur[cite: 95].
+- Collecter les données de manière fiable[cite: 95].
+- Traiter les données de manière pertinente[cite: 95].
+- Présenter les résultats de mesures selon les normes[cite: 95].
+- Analyser les résultats pour mettre en place d'éventuelles actions correctives[cite: 95].
+
+--------------------------------------------------------------------------------
+UE 2 / COMPÉTENCE 2 : DÉPLOYER LA MÉTROLOGIE ET LA DÉMARCHE QUALITÉ
+--------------------------------------------------------------------------------
+Évolution sur les 3 ans :
+- Niveau 1 : Pour un résultat de mesure[cite: 65].
+- Niveau 2 : Pour un instrument de mesure[cite: 65].
+- Niveau 3 : Pour un parc d'instruments complet[cite: 65].
+
+Composantes essentielles (Savoir-agir) :
+- Exprimer le résultat avec son incertitude de mesure selon les normes[cite: 95].
+- Choisir et mettre en œuvre un instrument de mesure en fonction de ses caractéristiques métrologiques[cite: 95, 96].
+- Utiliser des outils statistiques adaptés pour l'analyse des mesures[cite: 96].
+- S'assurer du respect des procédures (traçabilité, fiabilité)[cite: 96].
+
+--------------------------------------------------------------------------------
+UE 3 / COMPÉTENCE 3 : METTRE EN ŒUVRE UNE CHAÎNE DE MESURE ET D'INSTRUMENTATION
+(Cœur de la spécialité du parcours TI)
+--------------------------------------------------------------------------------
+Évolution sur les 3 ans :
+- Niveau 1 : Chaîne de mesure simple, pilotage élémentaire d'un instrument[cite: 70].
+- Niveau 2 : Chaîne d'instrumentation simple associant mesure, régulation et pilotage[cite: 74].
+- Niveau 3 : Chaîne d'instrumentation complexe intégrant des conditions spécifiques ou extrêmes[cite: 74, 75].
+
+Composantes essentielles (Savoir-agir) :
+- Choisir les capteurs ou détecteurs les plus adaptés[cite: 70].
+- Mettre en œuvre le transfert et le traitement (analogique ou numérique) du signal[cite: 70].
+- Mettre en place la régulation et le pilotage de l'instrumentation[cite: 70].
+
+--------------------------------------------------------------------------------
+UE 4 / COMPÉTENCE 4 : CARACTÉRISER DES GRANDEURS (PHYSIQUES/CHIMIQUES) ET MATÉRIAUX
+--------------------------------------------------------------------------------
+Évolution sur les 3 ans :
+- Niveau 1 : Méthodes simples[cite: 79, 80].
+- Niveau 2 : Méthodes complexes[cite: 80].
+
+Composantes essentielles (Savoir-agir) :
+- Identifier les grandeurs physiques et chimiques pertinentes[cite: 79].
+- Adapter la préparation de l'échantillon à la mesure[cite: 79].
+- Tenir compte de la structure de la matière et du type de matériau[cite: 79].
+- Mettre en œuvre les outils et techniques de caractérisation appropriés[cite: 79].
+- Analyser les résultats en relation avec la structure du matériau[cite: 79].
+
+--------------------------------------------------------------------------------
+UE 5 / COMPÉTENCE 5 : DÉFINIR UN CAHIER DES CHARGES (DÉMARCHE ENVIRONNEMENTALE)
+--------------------------------------------------------------------------------
+Évolution sur les 3 ans :
+- Niveau 1 : Cahier des charges d'une mesure simple[cite: 98, 99].
+- Niveau 2 : Cahier des charges d'un ensemble de mesures[cite: 99].
+
+Composantes essentielles (Savoir-agir) :
+- Limiter les impacts sur l'environnement et les impacts énergétiques[cite: 89].
+- Mettre en œuvre une gestion de projet pertinente[cite: 89].
+- Choisir les moyens techniques et métrologiques adaptés[cite: 89].
+- Utiliser une communication adaptée[cite: 89].
+
+--------------------------------------------------------------------------------
+MOYENS D'ACQUISITION DES UE (BLOCS DE CONNAISSANCES)
+--------------------------------------------------------------------------------
+Pour valider ces 5 Compétences/UE sur les 3 ans, la formation s'appuie sur :
+1. Les Ressources (Cours, TD, TP) : Informatique d'instrumentation, Électronique, Conditionnement de signaux, Mécanique, Optique, Mathématiques, Anglais scientifique, etc[cite: 276, 277, 303, 304, 305, 306, 307].
+2. Les SAÉ (Situations d'Apprentissage et d'Évaluation) : Projets pratiques comme le codage d'utilitaires [cite: 196], la mise en œuvre de capteurs [cite: 228, 229], ou la concrétisation de chaînes d'instrumentation complexes[cite: 407, 661].
+3. Les Stages et l'Alternance : Immersion professionnelle en milieu industriel[cite: 135].
+4. Le Portfolio : Preuve continue de l'acquisition des compétences tout au long du parcours[cite: 129, 131, 135].
+================================================================================
