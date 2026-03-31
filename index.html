@@ -13,13 +13,12 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
 
-  <!-- Favicon placeholder (replace with real icon) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css">
@@ -30,19 +29,20 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <!-- Grain photographique -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════ NAV ══════════════════════════ -->
   <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
     <div class="container nav__inner">
       <a href="#hero" class="nav__logo">JBC</a>
       <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
         <li><a href="#about">À propos</a></li>
         <li><a href="#education">Formation</a></li>
-        <li><a href="#competences">Compétences BUT</a></li>
+        <li><a href="#competences">Compétences</a></li>
         <li><a href="#experience">Expériences</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#skills">Outils</a></li>
@@ -53,14 +53,17 @@
 
   <main>
 
-    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
     <section id="hero" class="hero">
-      <div class="container hero__inner">
-        <div class="hero__tag">Disponible pour alternance — Sept. 2026</div>
-        <h1 class="hero__name">Jean-Baptiste <span class="accent">Catois</span></h1>
-        <p class="hero__title">
+      <div class="container">
+        <p class="hero__eyebrow">Portfolio // 2026</p>
+        <h1 class="hero__name">Jean-Baptiste<br><em>Catois</em></h1>
+        <p class="hero__role">
           Présélectionné à la formation d'ingénieur par l'apprentissage<br>
-          <span class="accent-alt">Génie Physique &amp; Systèmes Embarqués — ENSICAEN</span>
+          Génie Physique &amp; Systèmes Embarqués — ENSICAEN
+        </p>
+        <p class="hero__status">
+          <span class="status-dot"></span>Disponible pour alternance — Sept. 2026
         </p>
         <p class="hero__pitch">
           Étudiant en 3&nbsp;ᵉ&nbsp;année de BUT Mesures Physiques (Techniques d'instrumentation),
@@ -68,17 +71,20 @@
           embarqués jusqu'à l'analyse des données et la démarche qualité industrielle.
         </p>
         <div class="hero__ctas">
-          <a href="#projects" class="btn btn--primary">Voir mes projets</a>
-          <a href="assets/docs/CV_JeanBaptiste_Catois.pdf" class="btn btn--secondary" download>Télécharger le CV</a>
+          <a href="#projects" class="btn-editorial">Voir mes projets →</a>
+          <a href="assets/docs/CV_JeanBaptiste_Catois.pdf" class="btn-editorial btn-editorial--ghost" download>Télécharger le CV</a>
         </div>
       </div>
-      <div class="hero__bg-glow" aria-hidden="true"></div>
     </section>
 
-    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <!-- ══════════════════════════ ABOUT ══════════════════════════ -->
     <section id="about" class="section about">
       <div class="container">
-        <h2 class="section__title reveal">À propos</h2>
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 01</span>
+          <h2 class="section-heading__title">À propos</h2>
+        </header>
+
         <div class="about__grid">
 
           <div class="about__bio reveal">
@@ -92,36 +98,36 @@
               Je suis présélectionné à l'ENSICAEN, spécialité
               Génie Physique et Systèmes Embarqués, par la voie de l'apprentissage.
             </p>
-            <div class="about__badges">
-              <span class="badge badge--lang">FR — Natif</span>
-              <span class="badge badge--lang">EN — B2 (CLES)</span>
-              <span class="badge badge--lang">DE — A2</span>
-              <span class="badge badge--org">EFS — Donneur bénévole</span>
+            <div class="about__lang-tags">
+              <span class="tag">FR — Natif</span>
+              <span class="tag">EN — B2 (CLES)</span>
+              <span class="tag">DE — A2</span>
+              <span class="tag">EFS — Donneur bénévole</span>
             </div>
           </div>
 
           <div class="about__stats reveal">
-            <div class="stat-card">
-              <span class="stat-card__value">800h</span>
-              <span class="stat-card__label">de TP en 3 ans</span>
+            <div class="about__stat">
+              <span class="about__stat-value">800h</span>
+              <span class="about__stat-label">de TP en 3 ans</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-card__value">2</span>
-              <span class="stat-card__label">expériences industrielles</span>
+            <div class="about__stat">
+              <span class="about__stat-value">2</span>
+              <span class="about__stat-label">expériences industrielles</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-card__value">5</span>
-              <span class="stat-card__label">compétences BUT validées</span>
+            <div class="about__stat">
+              <span class="about__stat-value">5</span>
+              <span class="about__stat-label">compétences BUT validées</span>
             </div>
           </div>
 
           <div class="about__interests reveal">
-            <h3 class="about__interests-title">Centres d'intérêt</h3>
+            <p class="about__interests-title">Centres d'intérêt</p>
             <ul class="interests-list">
-              <li><span class="interest-icon" aria-hidden="true">🥋</span> Judo — 13 ans de pratique</li>
-              <li><span class="interest-icon" aria-hidden="true">🎵</span> Clarinette &amp; orchestre au conservatoire — 13 ans</li>
-              <li><span class="interest-icon" aria-hidden="true">⚜️</span> Scoutisme — 6 ans</li>
-              <li><span class="interest-icon" aria-hidden="true">🚗</span> Permis B — véhiculé</li>
+              <li>Judo — 13 ans de pratique</li>
+              <li>Clarinette &amp; orchestre au conservatoire — 13 ans</li>
+              <li>Scoutisme — 6 ans</li>
+              <li>Permis B — véhiculé</li>
             </ul>
           </div>
 
@@ -129,358 +135,391 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ EDUCATION ═══════════════════════════════ -->
+    <!-- ══════════════════════════ FORMATION ══════════════════════════ -->
     <section id="education" class="section education">
       <div class="container">
-        <h2 class="section__title reveal">Formation</h2>
-        <div class="timeline">
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 02</span>
+          <h2 class="section-heading__title">Formation</h2>
+        </header>
 
-          <!-- ENSICAEN -->
-          <div class="timeline__item reveal">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__content card">
-              <div class="timeline__meta">
-                <span class="timeline__date">Sept. 2026 — 2029 (prévu)</span>
-                <span class="timeline__location">Caen</span>
-              </div>
-              <h3 class="timeline__title">ENSICAEN — École Nationale Supérieure d'Ingénieurs de Caen</h3>
-              <p class="timeline__subtitle">Formation d'ingénieur par l'apprentissage — Spécialité Génie Physique et Systèmes Embarqués</p>
-              <p class="timeline__desc">Présélectionné. Poursuite d'études après le BUT MP en école d'ingénieurs habilitée par la CTI, par la voie de l'apprentissage.</p>
-              <div class="timeline__tags">
-                <span class="pill">Génie physique</span>
-                <span class="pill">Systèmes embarqués</span>
-                <span class="pill">Apprentissage</span>
-                <span class="pill">CTI</span>
+        <article class="edu-item reveal">
+          <div class="grid-12">
+            <div class="col-date edu-date">
+              <span class="mono-label">Sept. 2026</span>
+              <span class="mono-label">2029 (prévu)</span>
+              <span class="mono-label">Caen</span>
+            </div>
+            <div class="col-main">
+              <h3 class="edu-title">ENSICAEN</h3>
+              <p class="edu-subtitle">École Nationale Supérieure d'Ingénieurs de Caen</p>
+              <p class="edu-desc">
+                Formation d'ingénieur par l'apprentissage — Spécialité Génie Physique et Systèmes Embarqués.
+                Présélectionné. Poursuite d'études après le BUT MP en école d'ingénieurs habilitée par la CTI,
+                par la voie de l'apprentissage.
+              </p>
+              <div class="tags">
+                <span class="tag">Génie physique</span>
+                <span class="tag">Systèmes embarqués</span>
+                <span class="tag">Apprentissage</span>
+                <span class="tag">CTI</span>
               </div>
             </div>
           </div>
+        </article>
 
-          <!-- BUT MP -->
-          <div class="timeline__item reveal">
-            <div class="timeline__dot timeline__dot--active" aria-hidden="true"></div>
-            <div class="timeline__content card">
-              <div class="timeline__meta">
-                <span class="timeline__date">Sept. 2023 — Juil. 2026</span>
-                <span class="timeline__location">IUT de Caen, Campus 2</span>
-              </div>
-              <h3 class="timeline__title">BUT Mesures Physiques</h3>
-              <p class="timeline__subtitle">Parcours Techniques de l'instrumentation (TI) — En cours (3&nbsp;ᵉ&nbsp;année)</p>
-              <p class="timeline__desc">
+        <article class="edu-item reveal">
+          <div class="grid-12">
+            <div class="col-date edu-date">
+              <span class="mono-label">Sept. 2023</span>
+              <span class="mono-label">Juil. 2026</span>
+              <span class="mono-label">IUT de Caen, Campus 2</span>
+            </div>
+            <div class="col-main">
+              <h3 class="edu-title">BUT Mesures Physiques</h3>
+              <p class="edu-subtitle">Parcours Techniques de l'instrumentation (TI) — En cours (3&nbsp;ᵉ&nbsp;année)</p>
+              <p class="edu-desc">
                 Formation de 3 ans alliant 800&nbsp;h de TP, 800&nbsp;h de TD et 400&nbsp;h de CM.
                 Électronique analogique et numérique, instrumentation, microcontrôleurs (STM32, ESP32, Raspberry Pi),
                 acquisition de données, traitement du signal, métrologie, optique et thermodynamique.
                 Programmation en C et Python. Solutions IoT et base de données InfluxDB.
               </p>
-              <div class="timeline__tags">
-                <span class="pill">ESP32 / STM32</span>
-                <span class="pill">Python / C</span>
-                <span class="pill">Métrologie</span>
-                <span class="pill">Traitement du signal</span>
-                <span class="pill">IoT</span>
-                <span class="pill">Alternance</span>
+              <div class="tags">
+                <span class="tag">ESP32 / STM32</span>
+                <span class="tag">Python / C</span>
+                <span class="tag">Métrologie</span>
+                <span class="tag">Traitement du signal</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Alternance</span>
               </div>
             </div>
           </div>
+        </article>
 
-          <!-- Bac -->
-          <div class="timeline__item reveal">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__content card">
-              <div class="timeline__meta">
-                <span class="timeline__date">Sept. 2020 — Juin 2023</span>
-                <span class="timeline__location">Caen</span>
-              </div>
-              <h3 class="timeline__title">Lycée Jean-Rostand</h3>
-              <p class="timeline__subtitle">Baccalauréat Général — Mention BIEN</p>
-              <p class="timeline__desc">Spécialités : Mathématiques, Physique-Chimie et Mathématiques expertes.</p>
-              <div class="timeline__tags">
-                <span class="pill">Mathématiques</span>
-                <span class="pill">Physique-Chimie</span>
-                <span class="pill">Maths expertes</span>
+        <article class="edu-item reveal">
+          <div class="grid-12">
+            <div class="col-date edu-date">
+              <span class="mono-label">Sept. 2020</span>
+              <span class="mono-label">Juin 2023</span>
+              <span class="mono-label">Caen</span>
+            </div>
+            <div class="col-main">
+              <h3 class="edu-title">Lycée Jean-Rostand</h3>
+              <p class="edu-subtitle">Baccalauréat Général — Mention BIEN</p>
+              <p class="edu-desc">
+                Spécialités : Mathématiques, Physique-Chimie et Mathématiques expertes.
+              </p>
+              <div class="tags">
+                <span class="tag">Mathématiques</span>
+                <span class="tag">Physique-Chimie</span>
+                <span class="tag">Maths expertes</span>
               </div>
             </div>
           </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ COMPÉTENCES BUT ═══════════════════════════════ -->
+    <!-- ══════════════════════════ COMPÉTENCES BUT ══════════════════════════ -->
     <section id="competences" class="section competences">
       <div class="container">
-        <h2 class="section__title reveal">Compétences BUT — Parcours TI</h2>
-        <p class="section__sub reveal">
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 03</span>
+          <h2 class="section-heading__title">Compétences BUT — Parcours TI</h2>
+        </header>
+        <p class="section-sub reveal">
           5 compétences structurantes du Bachelor Universitaire de Technologie Mesures Physiques,
           développées sur 3 ans (6 semestres) dans le parcours Techniques d'instrumentation.
         </p>
-        <div class="competences__grid">
 
-          <div class="comp-card card reveal">
-            <div class="comp-card__num" aria-hidden="true">01</div>
-            <h3 class="comp-card__title">Mener une campagne de mesures</h3>
-            <p class="comp-card__desc">
+        <article class="comp-item reveal">
+          <span class="comp-num">01</span>
+          <div class="comp-body">
+            <h3 class="comp-title">Mener une campagne de mesures</h3>
+            <p class="comp-desc">
               Choisir une démarche scientifique adaptée, élaborer un protocole en respectant les normes
               de sécurité, collecter et traiter les données de manière fiable, présenter les résultats
               selon les normes et mettre en place des actions correctives.
             </p>
-            <div class="comp-card__levels">
-              <span class="level-badge level-badge--done">N1 — Grandeurs simples</span>
-              <span class="level-badge level-badge--done">N2 — Traitement complexe</span>
-              <span class="level-badge level-badge--active">N3 — Contexte pro</span>
+            <div class="level-tags">
+              <span class="level-tag">N1 — Grandeurs simples</span>
+              <span class="level-tag">N2 — Traitement complexe</span>
+              <span class="level-tag level-tag--active">N3 — Contexte pro</span>
             </div>
           </div>
+        </article>
 
-          <div class="comp-card card reveal">
-            <div class="comp-card__num" aria-hidden="true">02</div>
-            <h3 class="comp-card__title">Déployer la métrologie et la démarche qualité</h3>
-            <p class="comp-card__desc">
+        <article class="comp-item reveal">
+          <span class="comp-num">02</span>
+          <div class="comp-body">
+            <h3 class="comp-title">Déployer la métrologie et la démarche qualité</h3>
+            <p class="comp-desc">
               Exprimer un résultat avec son incertitude (GUM), choisir et mettre en œuvre un instrument
               selon ses caractéristiques métrologiques, utiliser des outils statistiques et assurer
               la traçabilité et la fiabilité des mesures.
             </p>
-            <div class="comp-card__levels">
-              <span class="level-badge level-badge--done">N1 — Résultat de mesure</span>
-              <span class="level-badge level-badge--done">N2 — Instrument de mesure</span>
-              <span class="level-badge level-badge--active">N3 — Parc complet</span>
+            <div class="level-tags">
+              <span class="level-tag">N1 — Résultat de mesure</span>
+              <span class="level-tag">N2 — Instrument de mesure</span>
+              <span class="level-tag level-tag--active">N3 — Parc complet</span>
             </div>
           </div>
+        </article>
 
-          <div class="comp-card card reveal">
-            <div class="comp-card__num" aria-hidden="true">03</div>
-            <h3 class="comp-card__title">Mettre en œuvre une chaîne de mesure et d'instrumentation</h3>
-            <p class="comp-card__desc">
+        <article class="comp-item reveal">
+          <span class="comp-num">03</span>
+          <div class="comp-body">
+            <h3 class="comp-title">Mettre en œuvre une chaîne de mesure et d'instrumentation</h3>
+            <p class="comp-desc">
               Choisir les capteurs ou détecteurs adaptés, mettre en œuvre le transfert et le traitement
               du signal (analogique/numérique), mettre en place la régulation et le pilotage de
               l'instrumentation. Cœur du parcours TI.
             </p>
-            <div class="comp-card__levels">
-              <span class="level-badge level-badge--done">N1 — Chaîne simple</span>
-              <span class="level-badge level-badge--done">N2 — Mesure + régulation</span>
-              <span class="level-badge level-badge--active">N3 — Conditions extrêmes</span>
+            <div class="level-tags">
+              <span class="level-tag">N1 — Chaîne simple</span>
+              <span class="level-tag">N2 — Mesure + régulation</span>
+              <span class="level-tag level-tag--active">N3 — Conditions extrêmes</span>
             </div>
           </div>
+        </article>
 
-          <div class="comp-card card reveal">
-            <div class="comp-card__num" aria-hidden="true">04</div>
-            <h3 class="comp-card__title">Caractériser des grandeurs physico-chimiques et matériaux</h3>
-            <p class="comp-card__desc">
+        <article class="comp-item reveal">
+          <span class="comp-num">04</span>
+          <div class="comp-body">
+            <h3 class="comp-title">Caractériser des grandeurs physico-chimiques et matériaux</h3>
+            <p class="comp-desc">
               Identifier les grandeurs physiques et chimiques pertinentes, adapter la préparation
               de l'échantillon, tenir compte de la structure de la matière et mettre en œuvre
               les outils et techniques de caractérisation appropriés.
             </p>
-            <div class="comp-card__levels">
-              <span class="level-badge level-badge--done">N1 — Méthodes simples</span>
-              <span class="level-badge level-badge--done">N2 — Méthodes complexes</span>
+            <div class="level-tags">
+              <span class="level-tag">N1 — Méthodes simples</span>
+              <span class="level-tag">N2 — Méthodes complexes</span>
             </div>
           </div>
+        </article>
 
-          <div class="comp-card card reveal">
-            <div class="comp-card__num" aria-hidden="true">05</div>
-            <h3 class="comp-card__title">Définir un cahier des charges (démarche environnementale)</h3>
-            <p class="comp-card__desc">
+        <article class="comp-item reveal">
+          <span class="comp-num">05</span>
+          <div class="comp-body">
+            <h3 class="comp-title">Définir un cahier des charges (démarche environnementale)</h3>
+            <p class="comp-desc">
               Limiter les impacts environnementaux et énergétiques, mettre en œuvre une gestion
               de projet pertinente, choisir les moyens techniques et métrologiques adaptés
               et utiliser une communication adaptée aux parties prenantes.
             </p>
-            <div class="comp-card__levels">
-              <span class="level-badge level-badge--done">N1 — Mesure simple</span>
-              <span class="level-badge level-badge--done">N2 — Ensemble de mesures</span>
+            <div class="level-tags">
+              <span class="level-tag">N1 — Mesure simple</span>
+              <span class="level-tag">N2 — Ensemble de mesures</span>
             </div>
           </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
+    <!-- ══════════════════════════ EXPÉRIENCES ══════════════════════════ -->
     <section id="experience" class="section experience">
       <div class="container">
-        <h2 class="section__title reveal">Expériences professionnelles</h2>
-        <div class="exp__grid">
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 04</span>
+          <h2 class="section-heading__title">Expériences professionnelles</h2>
+        </header>
 
-          <article class="exp-card card reveal">
-            <div class="exp-card__header">
-              <div>
-                <h3 class="exp-card__company">APTAR PHARMA</h3>
-                <p class="exp-card__role">Alternant Métrologie</p>
-              </div>
-              <div class="exp-card__meta">
-                <span class="exp-card__date">Oct. 2025 — Juil. 2026</span>
-                <span class="exp-card__location">Granville</span>
-              </div>
-            </div>
-            <div class="exp-card__mission">
-              <h4>Rédaction d'un rationnel — Justification du fréquentiel de vérification</h4>
-              <p>
+        <article class="exp-item reveal">
+          <div class="grid-12">
+            <div class="col-content">
+              <h3 class="exp-company">APTAR PHARMA</h3>
+              <p class="exp-role">Alternant Métrologie</p>
+              <p class="exp-mission-title">Rédaction d'un rationnel — Justification du fréquentiel de vérification</p>
+              <p class="exp-desc">
                 Rédaction d'un rationnel justifiant le fréquentiel de vérification par une analyse de
                 risques incluant l'évaluation de la criticité des fréquences de vérification actuelles.
                 Rédaction technique via la production de documents justificatifs (rationnels) pour valider
                 les changements de périodicité et assurer l'amélioration continue par l'optimisation du
                 plan de surveillance métrologique.
               </p>
+              <div class="tags">
+                <span class="tag">Métrologie</span>
+                <span class="tag">Analyse de risques</span>
+                <span class="tag">Plan de surveillance</span>
+                <span class="tag">Pharma</span>
+              </div>
             </div>
-            <div class="exp-card__tags">
-              <span class="pill">Métrologie</span>
-              <span class="pill">Analyse de risques</span>
-              <span class="pill">Plan de surveillance</span>
-              <span class="pill">Pharma</span>
+            <div class="col-aside exp-aside">
+              <span class="mono-label">Oct. 2025 — Juil. 2026</span>
+              <span class="mono-label">Granville</span>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="exp-card card reveal">
-            <div class="exp-card__header">
-              <div>
-                <h3 class="exp-card__company">AXFIL</h3>
-                <p class="exp-card__role">Stagiaire Qualité</p>
-              </div>
-              <div class="exp-card__meta">
-                <span class="exp-card__date">Avr. 2025 — Juin 2025</span>
-                <span class="exp-card__location">L'Aigle</span>
-              </div>
-            </div>
-            <div class="exp-card__mission">
-              <h4>Mission en validation et assurance qualité (ISO 13485)</h4>
-              <p>
+        <article class="exp-item reveal">
+          <div class="grid-12">
+            <div class="col-content">
+              <h3 class="exp-company">AXFIL</h3>
+              <p class="exp-role">Stagiaire Qualité</p>
+              <p class="exp-mission-title">Mission en validation et assurance qualité (ISO 13485)</p>
+              <p class="exp-desc">
                 Validation et assurance qualité selon la norme ISO&nbsp;13485 avec qualification
                 d'équipements par le déploiement et l'exécution des protocoles QI/QO/QP.
                 Préparation d'audit par la mise en conformité des processus. Amélioration continue
                 via l'analyse des processus de production pour identifier les écarts et optimiser
                 les flux. Gestion et suivi métrologique du parc d'instruments de mesure.
               </p>
+              <div class="tags">
+                <span class="tag">ISO 13485</span>
+                <span class="tag">QI / QO / QP</span>
+                <span class="tag">Audit qualité</span>
+                <span class="tag">Dispositifs médicaux</span>
+                <span class="tag">Métrologie</span>
+              </div>
             </div>
-            <div class="exp-card__tags">
-              <span class="pill">ISO 13485</span>
-              <span class="pill">QI / QO / QP</span>
-              <span class="pill">Audit qualité</span>
-              <span class="pill">Dispositifs médicaux</span>
-              <span class="pill">Métrologie</span>
+            <div class="col-aside exp-aside">
+              <span class="mono-label">Avr. 2025 — Juin 2025</span>
+              <span class="mono-label">L'Aigle</span>
             </div>
-          </article>
+          </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════════ -->
+    <!-- ══════════════════════════ PROJETS ══════════════════════════ -->
     <section id="projects" class="section projects">
       <div class="container">
-        <h2 class="section__title reveal">Projets</h2>
-        <div class="projects__grid">
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 05</span>
+          <h2 class="section-heading__title">Projets</h2>
+        </header>
 
-          <article class="project-card card reveal">
-            <div class="project-card__header">
-              <span class="project-card__date">Nov. 2024 — Mars 2025</span>
-              <h3 class="project-card__title">Station météo autonome</h3>
-              <p class="project-card__sub">Création d'une boîte météo autonome — SAÉ BUT Mesures Physiques</p>
+        <article class="project-item reveal">
+          <div class="grid-12">
+            <div class="col-content project-content">
+              <span class="mono-label project-cat">SAÉ — IoT / Embarqué</span>
+              <h3 class="project-title">Station météo autonome</h3>
+              <span class="project-sub">Nov. 2024 — Mars 2025</span>
+              <p class="project-desc">
+                Développement d'une station météorologique autonome multi-capteurs (température, humidité,
+                particules fines, pression atmosphérique) pilotée par un microcontrôleur ESP32.
+                Programmation de la transmission sans fil des données vers une interface web dédiée
+                avec base de données InfluxDB. Intégration comme outil de démonstration pédagogique
+                pour le BUT Mesures Physiques.
+              </p>
+              <div class="tags">
+                <span class="tag">ESP32</span>
+                <span class="tag">C / Arduino</span>
+                <span class="tag">InfluxDB</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Multi-capteurs</span>
+                <span class="tag">Wi-Fi</span>
+              </div>
             </div>
-            <p class="project-card__desc">
-              Développement d'une station météorologique autonome multi-capteurs (température, humidité,
-              particules fines, pression atmosphérique) pilotée par un microcontrôleur ESP32.
-              Programmation de la transmission sans fil des données vers une interface web dédiée
-              avec base de données InfluxDB. Intégration comme outil de démonstration pédagogique
-              pour le BUT Mesures Physiques.
-            </p>
-            <div class="project-card__tags">
-              <span class="pill">ESP32</span>
-              <span class="pill">C / Arduino</span>
-              <span class="pill">InfluxDB</span>
-              <span class="pill">IoT</span>
-              <span class="pill">Multi-capteurs</span>
-              <span class="pill">Wi-Fi</span>
+            <div class="col-aside project-aside">
+              <span class="project-num">01</span>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project-card card reveal">
-            <div class="project-card__header">
-              <span class="project-card__date">Janv. 2024 — Mars 2024</span>
-              <h3 class="project-card__title">Caractérisation de l'aluminium</h3>
-              <p class="project-card__sub">Projet d'analyse quantitative et instrumentation</p>
+        <article class="project-item reveal">
+          <div class="grid-12">
+            <div class="col-content project-content">
+              <span class="mono-label project-cat">Analyse quantitative — Instrumentation</span>
+              <h3 class="project-title">Caractérisation de l'aluminium</h3>
+              <span class="project-sub">Janv. 2024 — Mars 2024</span>
+              <p class="project-desc">
+                Détermination du taux de pureté de l'aluminium ménager par dosage complexométrique
+                (EDTA) et titrage en retour. Mise en œuvre d'un protocole expérimental de chimie
+                analytique, calcul des incertitudes de mesure (GUM) pour valider la fiabilité des
+                résultats et analyse critique des teneurs obtenues par rapport aux standards industriels.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">GUM</span>
+                <span class="tag">Chimie analytique</span>
+                <span class="tag">EDTA</span>
+                <span class="tag">Incertitudes</span>
+                <span class="tag">Métrologie</span>
+              </div>
             </div>
-            <p class="project-card__desc">
-              Détermination du taux de pureté de l'aluminium ménager par dosage complexométrique
-              (EDTA) et titrage en retour. Mise en œuvre d'un protocole expérimental de chimie
-              analytique, calcul des incertitudes de mesure (GUM) pour valider la fiabilité des
-              résultats et analyse critique des teneurs obtenues par rapport aux standards industriels.
-            </p>
-            <div class="project-card__tags">
-              <span class="pill">Python</span>
-              <span class="pill">GUM</span>
-              <span class="pill">Chimie analytique</span>
-              <span class="pill">EDTA</span>
-              <span class="pill">Incertitudes</span>
-              <span class="pill">Métrologie</span>
+            <div class="col-aside project-aside">
+              <span class="project-num">02</span>
             </div>
-          </article>
+          </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
+    <!-- ══════════════════════════ COMPÉTENCES TECHNIQUES ══════════════════════════ -->
     <section id="skills" class="section skills">
       <div class="container">
-        <h2 class="section__title reveal">Compétences techniques</h2>
-        <div class="skills__grid">
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 06</span>
+          <h2 class="section-heading__title">Compétences techniques</h2>
+        </header>
+
+        <div class="skills__list">
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Programmation</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">Python</span>
-              <span class="pill pill--mono">C</span>
-              <span class="pill pill--mono">LaTeX</span>
+            <span class="skills__group-title">Programmation</span>
+            <div class="skills__tags">
+              <span class="tag">Python</span>
+              <span class="tag">C</span>
+              <span class="tag">LaTeX</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Outils &amp; IDEs</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">Arduino IDE</span>
-              <span class="pill pill--mono">Spyder 6</span>
-              <span class="pill pill--mono">Visual Studio</span>
-              <span class="pill pill--mono">Pack Office 365</span>
+            <span class="skills__group-title">Outils &amp; IDEs</span>
+            <div class="skills__tags">
+              <span class="tag">Arduino IDE</span>
+              <span class="tag">Spyder 6</span>
+              <span class="tag">Visual Studio</span>
+              <span class="tag">Pack Office 365</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Systèmes &amp; OS</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">Windows</span>
-              <span class="pill pill--mono">Debian</span>
-              <span class="pill pill--mono">Ubuntu</span>
-              <span class="pill pill--mono">Raspberry Pi OS</span>
+            <span class="skills__group-title">Systèmes &amp; OS</span>
+            <div class="skills__tags">
+              <span class="tag">Windows</span>
+              <span class="tag">Debian</span>
+              <span class="tag">Ubuntu</span>
+              <span class="tag">Raspberry Pi OS</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Matériel &amp; Protocoles</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">ESP32</span>
-              <span class="pill pill--mono">STM32</span>
-              <span class="pill pill--mono">Raspberry Pi</span>
-              <span class="pill pill--mono">InfluxDB</span>
-              <span class="pill pill--mono">IoT / Wi-Fi</span>
+            <span class="skills__group-title">Matériel &amp; Protocoles</span>
+            <div class="skills__tags">
+              <span class="tag">ESP32</span>
+              <span class="tag">STM32</span>
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">InfluxDB</span>
+              <span class="tag">IoT / Wi-Fi</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Métrologie &amp; Qualité</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">GUM</span>
-              <span class="pill pill--mono">ISO 13485</span>
-              <span class="pill pill--mono">QI / QO / QP</span>
-              <span class="pill pill--mono">Analyse de risques</span>
-              <span class="pill pill--mono">Traçabilité</span>
+            <span class="skills__group-title">Métrologie &amp; Qualité</span>
+            <div class="skills__tags">
+              <span class="tag">GUM</span>
+              <span class="tag">ISO 13485</span>
+              <span class="tag">QI / QO / QP</span>
+              <span class="tag">Analyse de risques</span>
+              <span class="tag">Traçabilité</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
-            <h3 class="skills__group-title">Signal &amp; Instrumentation</h3>
-            <div class="pills-row">
-              <span class="pill pill--mono">Traitement du signal</span>
-              <span class="pill pill--mono">Acquisition de données</span>
-              <span class="pill pill--mono">Électronique analogique</span>
-              <span class="pill pill--mono">CEM</span>
-              <span class="pill pill--mono">DAO</span>
+            <span class="skills__group-title">Signal &amp; Instrumentation</span>
+            <div class="skills__tags">
+              <span class="tag">Traitement du signal</span>
+              <span class="tag">Acquisition de données</span>
+              <span class="tag">Électronique analogique</span>
+              <span class="tag">CEM</span>
+              <span class="tag">DAO</span>
             </div>
           </div>
 
@@ -488,44 +527,34 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+    <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
     <section id="contact" class="section contact">
       <div class="container">
-        <h2 class="section__title reveal">Contact</h2>
-        <div class="contact__wrapper reveal">
-          <div class="contact__badge">
-            <span class="badge badge--available">Disponible pour alternance — Ingénieur ENSICAEN — Sept. 2026</span>
-          </div>
-          <div class="contact__links">
-            <a href="mailto:jbcatois@outlook.fr" class="contact__link">
-              <svg class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="m2 7 10 7 10-7"/>
-              </svg>
-              jbcatois@outlook.fr
-            </a>
-            <a href="tel:+33783958603" class="contact__link">
-              <svg class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              07 83 95 86 03
-            </a>
-            <a href="https://linkedin.com/in/jean-baptiste-catois" target="_blank" rel="noopener noreferrer" class="contact__link">
-              <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-              linkedin.com/in/jean-baptiste-catois
-            </a>
-          </div>
+        <header class="section-heading reveal">
+          <span class="section-heading__label">// 07</span>
+          <h2 class="section-heading__title">Contact</h2>
+        </header>
+
+        <div class="contact__inner reveal">
+          <p class="contact__available">
+            <span class="status-dot"></span>Disponible pour alternance — Ingénieur ENSICAEN — Sept. 2026
+          </p>
+          <a href="mailto:jbcatois@outlook.fr" class="contact__email">jbcatois@outlook.fr</a>
+          <a href="tel:+33783958603" class="contact__link-row">
+            <span class="contact__link-label">Téléphone</span>
+            07 83 95 86 03
+          </a>
+          <a href="https://linkedin.com/in/jean-baptiste-catois" target="_blank" rel="noopener noreferrer" class="contact__link-row">
+            <span class="contact__link-label">LinkedIn</span>
+            jean-baptiste-catois
+          </a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
   <footer class="footer">
     <div class="container footer__inner">
       <span>Jean-Baptiste Catois</span>

@@ -1,280 +1,109 @@
-/* ─── Buttons ─── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 0.9375rem;
-  cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
-  border: 1px solid transparent;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn--primary {
-  background-color: var(--color-accent);
-  color: #fff;
-  box-shadow: 0 4px 24px rgba(79, 142, 247, 0.3);
-}
-
-.btn--primary:hover {
-  background-color: #6ba3ff;
-  box-shadow: 0 8px 32px rgba(79, 142, 247, 0.45);
-}
-
-.btn--secondary {
-  background-color: transparent;
-  color: var(--color-text);
-  border-color: var(--color-border);
-}
-
-.btn--secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* ─── Card ─── */
-.card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  transition: border-color var(--transition-med), transform var(--transition-med), box-shadow var(--transition-med);
-}
-
-.card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(79, 142, 247, 0.08);
-}
-
-/* Inside even sections (surface bg), cards use bg color */
-.section:nth-child(even) .card {
-  background-color: var(--color-bg);
-}
-
-/* ─── Timeline ─── */
-.timeline {
-  position: relative;
-  padding-left: 2.5rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 12px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
-}
-
-.timeline__item {
-  position: relative;
-  margin-bottom: var(--space-xl);
-}
-
-.timeline__item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline__dot {
-  position: absolute;
-  left: -2.5rem;
-  top: var(--space-xl);
-  transform: translateX(-3px);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-accent);
-  transition: background-color var(--transition-med);
-}
-
-.timeline__dot--active {
-  background-color: var(--color-accent);
-  box-shadow: 0 0 12px rgba(79, 142, 247, 0.5);
-}
-
-.timeline__meta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-  flex-wrap: wrap;
-}
-
-.timeline__date,
-.timeline__location {
-  font-size: 0.8125rem;
+/* ─── Label mono ─── */
+.mono-label {
   font-family: var(--font-mono);
-  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.timeline__title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-xs);
-}
-
-.timeline__subtitle {
-  color: var(--color-accent-alt);
-  font-weight: 500;
-  margin-bottom: var(--space-sm);
-  font-size: 0.9375rem;
-}
-
-.timeline__desc {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
-  margin-bottom: var(--space-md);
-  line-height: 1.7;
-}
-
-.timeline__tags {
+/* ─── Tags (plats, coins carrés) ─── */
+.tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
+  gap: 0.5rem;
+  margin-top: 1.25rem;
 }
 
-/* ─── Pills ─── */
-.pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  background-color: rgba(79, 142, 247, 0.1);
-  color: var(--color-accent);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  border: 1px solid rgba(79, 142, 247, 0.2);
-  transition: background-color var(--transition-fast);
-}
-
-.pill:hover {
-  background-color: rgba(79, 142, 247, 0.2);
-}
-
-.pill--mono {
+.tag {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  background-color: rgba(127, 212, 193, 0.1);
-  color: var(--color-accent-alt);
-  border-color: rgba(127, 212, 193, 0.2);
-}
-
-.pill--mono:hover {
-  background-color: rgba(127, 212, 193, 0.2);
-}
-
-.pills-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-}
-
-/* ─── Badges ─── */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  font-family: var(--font-mono);
-}
-
-.badge--lang {
-  background-color: rgba(127, 212, 193, 0.15);
-  color: var(--color-accent-alt);
-  border: 1px solid rgba(127, 212, 193, 0.25);
-}
-
-.badge--org {
-  background-color: rgba(79, 142, 247, 0.1);
-  color: var(--color-accent);
-  border: 1px solid rgba(79, 142, 247, 0.2);
-}
-
-.badge--available {
-  background-color: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-md);
-}
-
-/* ─── Stat cards ─── */
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  text-align: center;
-  transition: border-color var(--transition-med);
-}
-
-.stat-card:hover {
-  border-color: var(--color-accent);
-}
-
-.section:nth-child(even) .stat-card {
-  background-color: var(--color-surface);
-}
-
-.stat-card__value {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1.2;
-}
-
-.stat-card__label {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  margin-top: var(--space-xs);
-}
-
-/* ─── Level badges (competences) ─── */
-.level-badge {
-  display: inline-flex;
-  align-items: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
   padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tag:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+/* ─── Boutons éditoriaux (coins carrés, pas de shadow) ─── */
+.btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--text);
+  color: var(--text);
+  background: transparent;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  cursor: pointer;
 }
 
-.level-badge--done {
-  background-color: rgba(127, 212, 193, 0.1);
-  color: var(--color-accent-alt);
-  border: 1px solid rgba(127, 212, 193, 0.2);
+.btn-editorial:hover {
+  background: var(--text);
+  color: var(--bg);
 }
 
-.level-badge--active {
-  background-color: rgba(79, 142, 247, 0.15);
-  color: var(--color-accent);
-  border: 1px solid rgba(79, 142, 247, 0.3);
+.btn-editorial--ghost {
+  border-color: var(--border);
+  color: var(--muted);
 }
 
-/* ─── Reveal animation ─── */
+.btn-editorial--ghost:hover {
+  border-color: var(--muted);
+  color: var(--text);
+  background: transparent;
+}
+
+/* ─── Point de statut pulsant ─── */
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+/* ─── Badges de niveau (compétences) ─── */
+.level-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.level-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  letter-spacing: 0.04em;
+}
+
+.level-tag--active {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+/* ─── Animation reveal (scroll) ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(18px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
 }
 
 .reveal.visible {
