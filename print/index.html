@@ -17,7 +17,7 @@
 
     @page {
       size: A4;
-      margin: 1.5cm 2cm;
+      margin: 0;
     }
 
     /* ── Variables ── */
@@ -405,7 +405,7 @@
     /* ── Print ── */
     @media print {
       html { font-size: 10.5pt; }
-      .page { padding: 0; }
+      .page { padding: 1.5cm 2cm; }
       .section { break-inside: avoid; }
       a { color: inherit; }
     }
