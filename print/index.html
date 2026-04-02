@@ -120,8 +120,7 @@
 
     /* ── Section ── */
     .section {
-      margin-bottom: 1.3rem;
-      break-inside: avoid;
+      margin-bottom: 1rem;
     }
 
     .section-title {
@@ -131,6 +130,7 @@
       padding-bottom: 0.3rem;
       margin-bottom: 0.9rem;
       color: var(--ink);
+      break-after: avoid;
     }
 
     /* ── À propos ── */
@@ -404,9 +404,8 @@
 
     /* ── Print ── */
     @media print {
-      html { font-size: 10.5pt; }
+      html { font-size: 9pt; }
       .page { padding: 1.5cm 2cm; }
-      .section { break-inside: avoid; }
       a { color: inherit; }
     }
 
