@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Jean-Baptiste Catois</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+
+    @page { size: A4; margin: 0; }
+
+    :root {
+      --ink:    #0F0F0F;
+      --navy:   #1B3A5C;
+      --muted:  #4A4A4A;
+      --light:  #848484;
+      --border: #CECECE;
+      --bg:     #FFFFFF;
+
+      --f-head: 'Playfair Display', Georgia, serif;
+      --f-body: 'Inter', system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { font-size: 10pt; }
+
+    body {
+      font-family: var(--f-body);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Bouton impression (écran uniquement) ── */
+    .print-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.55rem 1.5rem;
+      z-index: 100;
+    }
+    .print-bar p {
+      font-family: var(--f-mono);
+      font-size: 7pt;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+    .print-bar button {
+      font-family: var(--f-mono);
+      font-size: 7.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #fff;
+      color: var(--navy);
+      border: none;
+      padding: 0.3rem 0.9rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    @media print { .print-bar { display: none; } }
+
+    /* ── Page ── */
+    .page {
+      max-width: 21cm;
+      margin: 0 auto;
+      padding: 1.5cm 2cm 1.3cm;
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 2px solid var(--navy);
+      margin-bottom: 1.1rem;
+    }
+
+    .cv-name {
+      font-family: var(--f-head);
+      font-size: 30pt;
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+    }
+    .cv-name em { font-style: italic; }
+
+    .cv-title {
+      font-family: var(--f-mono);
+      font-size: 7.5pt;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-top: 0.45rem;
+      line-height: 1.75;
+    }
+
+    .cv-status {
+      font-family: var(--f-mono);
+      font-size: 7pt;
+      color: var(--light);
+      margin-top: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+    .cv-status::before {
+      content: '';
+      display: inline-block;
+      width: 0.55em;
+      height: 0.55em;
+      border-radius: 50%;
+      background: #22C55E;
+      flex-shrink: 0;
+    }
+
+    .cv-contacts {
+      text-align: right;
+      padding-top: 0.25rem;
+    }
+    .cv-contact-item {
+      font-family: var(--f-mono);
+      font-size: 7.5pt;
+      color: var(--muted);
+      display: block;
+      line-height: 1.9;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: var(--f-mono);
+      font-size: 6.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.65rem;
+    }
+
+    /* ── TWO-COLUMN ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      gap: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ENTRY ── */
+    .entry {
+      padding-left: 0.65rem;
+      border-left: 2px solid var(--navy);
+      margin-bottom: 0.65rem;
+      break-inside: avoid;
+    }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .entry-org {
+      font-family: var(--f-head);
+      font-size: 10.5pt;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .entry-date {
+      font-family: var(--f-mono);
+      font-size: 6.5pt;
+      color: var(--light);
+      white-space: nowrap;
+    }
+
+    .entry-role {
+      font-family: var(--f-mono);
+      font-size: 6.8pt;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0.1rem 0 0.22rem;
+    }
+
+    .entry-desc {
+      font-size: 8pt;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0.28rem;
+    }
+
+    /* ── Tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+    }
+    .tag {
+      font-family: var(--f-mono);
+      font-size: 5.8pt;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.06rem 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── BOTTOM THREE-COLUMN ── */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+
+    /* ── Skill groups ── */
+    .skill-group { margin-bottom: 0.45rem; }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-lbl {
+      font-family: var(--f-mono);
+      font-size: 6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--light);
+      margin-bottom: 0.2rem;
+    }
+
+    .interest-list {
+      font-size: 7.5pt;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* ── Print ── */
+    @media print {
+      html { font-size: 9pt; }
+      .page { padding: 1.5cm 2cm 1.3cm; }
+    }
+
+    /* ── Screen preview ── */
+    @media screen {
+      body { background: #DCDCDC; }
+      .page {
+        background: white;
+        box-shadow: 0 6px 48px rgba(0,0,0,0.22);
+        margin: 1cm auto;
+        margin-top: 3rem;
+        min-height: 29.7cm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <p>Fichier · → · Imprimer · → · Enregistrer en PDF · (format A4, marges par défaut, sans en-têtes/pieds de page)</p>
+    <button onclick="window.print()">Imprimer / PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- ── HEADER ── -->
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">Jean-Baptiste <em>Catois</em></h1>
+        <p class="cv-title">
+          Ingénieur ENSICAEN · 1ère année<br>
+          Génie Physique &amp; Systèmes Embarqués · Apprentissage
+        </p>
+        <p class="cv-status">En alternance — Aptar Pharma — Qualification/Validation — Granville &amp; Brécey</p>
+      </div>
+      <div class="cv-contacts">
+        <span class="cv-contact-item">jbcatois@outlook.fr</span>
+        <span class="cv-contact-item">07 83 95 86 03</span>
+        <span class="cv-contact-item">linkedin.com/in/jean-baptiste-catois</span>
+        <span class="cv-contact-item">Caen (14)</span>
+      </div>
+    </header>
+
+    <!-- ── FORMATION + EXPÉRIENCES ── -->
+    <div class="body-grid">
+
+      <!-- FORMATION -->
+      <section>
+        <p class="section-label">Formation</p>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">ENSICAEN</h3>
+            <span class="entry-date">2026 – 2029</span>
+          </div>
+          <p class="entry-role">Ingénieur Génie Physique &amp; Systèmes Embarqués — 1ère année</p>
+          <p class="entry-desc">Formation par l'apprentissage — école habilitée CTI. Alternance 3 ans avec Aptar Pharma (Granville &amp; Brécey).</p>
+          <div class="tags">
+            <span class="tag">Génie physique</span>
+            <span class="tag">Systèmes embarqués</span>
+            <span class="tag">CTI</span>
+            <span class="tag">Apprentissage</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">BUT Mesures Physiques</h3>
+            <span class="entry-date">2023 – 2026</span>
+          </div>
+          <p class="entry-role">Techniques de l'instrumentation — IUT de Caen — Diplômé</p>
+          <p class="entry-desc">800 h de TP. Électronique analogique/numérique, microcontrôleurs (STM32, ESP32), métrologie, traitement du signal, IoT, C, Python.</p>
+          <div class="tags">
+            <span class="tag">ESP32 / STM32</span>
+            <span class="tag">Python / C</span>
+            <span class="tag">Métrologie</span>
+            <span class="tag">IoT</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">Lycée Jean-Rostand</h3>
+            <span class="entry-date">2020 – 2023</span>
+          </div>
+          <p class="entry-role">Baccalauréat Général — Mention Bien</p>
+          <p class="entry-desc">Spécialités : Mathématiques, Physique-Chimie, Mathématiques expertes.</p>
+        </div>
+      </section>
+
+      <!-- EXPÉRIENCES -->
+      <section>
+        <p class="section-label">Expériences professionnelles</p>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">Aptar Pharma</h3>
+            <span class="entry-date">Sept. 2026 — présent</span>
+          </div>
+          <p class="entry-role">Alternant ingénieur Qualification/Validation · Granville &amp; Brécey</p>
+          <p class="entry-desc">
+            Développement d'outils informatiques pour le service Qualification/Validation (BPF/GMP) : tableaux de bord Power BI (délais, charges, activités par type/secteur/site), plateforme de tickets pour le suivi des demandes, vue des sites compilant l'état qualifié des équipements et délais de requalification, outils d'analyse croisée production/maintenance.
+          </p>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Outils digitaux</span>
+            <span class="tag">BPF / GMP</span>
+            <span class="tag">Qualification</span>
+            <span class="tag">Pharma</span>
+            <span class="tag">Analyse de données</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">Aptar Pharma</h3>
+            <span class="entry-date">Oct. 2025 — Juil. 2026</span>
+          </div>
+          <p class="entry-role">Alternant Métrologie · Granville</p>
+          <p class="entry-desc">
+            Rédaction d'un rationnel justifiant le fréquentiel de vérification par analyse de risques (évaluation de la criticité). Optimisation du plan de surveillance métrologique.
+          </p>
+          <div class="tags">
+            <span class="tag">Métrologie</span>
+            <span class="tag">Analyse de risques</span>
+            <span class="tag">Plan de surveillance</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">AXFIL</h3>
+            <span class="entry-date">Avr. — Juin 2025</span>
+          </div>
+          <p class="entry-role">Stagiaire Qualité · L'Aigle</p>
+          <p class="entry-desc">
+            Qualification d'équipements (QI/QO/QP) selon ISO 13485. Préparation d'audit, mise en conformité des processus, gestion métrologique du parc d'instruments de mesure.
+          </p>
+          <div class="tags">
+            <span class="tag">ISO 13485</span>
+            <span class="tag">QI / QO / QP</span>
+            <span class="tag">Audit qualité</span>
+            <span class="tag">Dispositifs médicaux</span>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ── PROJETS + COMPÉTENCES + LANGUES ── -->
+    <div class="bottom-grid">
+
+      <!-- PROJETS -->
+      <section>
+        <p class="section-label">Projets</p>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">Station météo autonome</h3>
+            <span class="entry-date">2024 – 2025</span>
+          </div>
+          <p class="entry-role">SAÉ — IoT / Embarqué</p>
+          <p class="entry-desc">ESP32 multi-capteurs, transmission Wi-Fi, base InfluxDB. Intégré comme outil pédagogique BUT MP.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-org">Caractérisation aluminium</h3>
+            <span class="entry-date">2024</span>
+          </div>
+          <p class="entry-role">Chimie analytique</p>
+          <p class="entry-desc">Dosage EDTA, calcul d'incertitudes GUM, analyse critique vs. standards industriels. Python.</p>
+        </div>
+      </section>
+
+      <!-- COMPÉTENCES -->
+      <section>
+        <p class="section-label">Compétences techniques</p>
+
+        <div class="skill-group">
+          <p class="skill-lbl">Programmation</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">LaTeX</span></div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-lbl">Embarqué &amp; IoT</p>
+          <div class="tags"><span class="tag">ESP32</span><span class="tag">STM32</span><span class="tag">Raspberry Pi</span><span class="tag">InfluxDB</span></div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-lbl">Métrologie &amp; Qualité</p>
+          <div class="tags"><span class="tag">GUM</span><span class="tag">ISO 13485</span><span class="tag">BPF / GMP</span><span class="tag">Power BI</span><span class="tag">Traçabilité</span></div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-lbl">Signal &amp; Instrumentation</p>
+          <div class="tags"><span class="tag">Traitement du signal</span><span class="tag">Acquisition</span><span class="tag">Électronique</span></div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-lbl">Outils</p>
+          <div class="tags"><span class="tag">Arduino IDE</span><span class="tag">Spyder</span><span class="tag">Visual Studio</span><span class="tag">Office 365</span></div>
+        </div>
+      </section>
+
+      <!-- LANGUES + INTÉRÊTS -->
+      <section>
+        <p class="section-label">Langues</p>
+        <div class="skill-group">
+          <div class="tags">
+            <span class="tag">FR — Natif</span>
+            <span class="tag">EN — B2 (CLES)</span>
+            <span class="tag">DE — A2</span>
+          </div>
+        </div>
+
+        <div style="height: 0.55rem"></div>
+
+        <p class="section-label">Centres d'intérêt</p>
+        <ul class="interest-list">
+          <li>Judo — 13 ans de pratique</li>
+          <li>Clarinette &amp; orchestre — 13 ans</li>
+          <li>Scoutisme — 6 ans</li>
+          <li>Permis B — véhiculé</li>
+          <li>EFS — Donneur bénévole</li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+</body>
+</html>
