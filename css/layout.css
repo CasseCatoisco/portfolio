@@ -112,6 +112,16 @@ button:focus-visible {
   border-bottom-color: var(--blue);
 }
 
+.nav__links a.nav__cv {
+  color: var(--paper);
+  background: var(--blue);
+  padding: 0.35rem 0.8rem;
+  border-bottom: 0;
+  font-weight: 600;
+}
+
+.nav__links a.nav__cv:hover { background: var(--ink); color: var(--paper); }
+
 .nav__burger {
   display: none;
   flex-direction: column;
@@ -197,6 +207,7 @@ button:focus-visible {
     padding: 0.75rem var(--pad);
     border-bottom: 0;
   }
+  .nav__links a.nav__cv { display: inline-block; margin: 0.5rem var(--pad); padding: 0.6rem 1rem; }
   .nav__burger { display: flex; }
 }
 
