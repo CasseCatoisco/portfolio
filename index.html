@@ -13,14 +13,12 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1a2e'/%3E%3Cpath d='M6 4v24M6 8h8M6 16h12M6 24h8' stroke='%23e7eef7' stroke-width='2' fill='none'/%3E%3Cpath d='M6 16h22' stroke='%237db0ff' stroke-width='3'/%3E%3C/svg%3E">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -29,577 +27,312 @@
 </head>
 <body>
 
-  <!-- Grain photographique -->
-  <div class="noise-overlay" aria-hidden="true"></div>
+  <!-- Règle graduée : le curseur suit le défilement -->
+  <div class="ruler" aria-hidden="true">
+    <div class="ruler__cursor" id="rulerCursor"><span class="ruler__reading" id="rulerReading">0 mm</span></div>
+  </div>
 
-  <!-- ══════════════════════════ NAV ══════════════════════════ -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+  <nav class="nav" id="nav" aria-label="Navigation principale">
     <div class="container nav__inner">
-      <a href="#hero" class="nav__logo">JBC</a>
+      <a href="#hero" class="nav__logo">Jean-Baptiste Catois</a>
       <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks" role="list">
         <li><a href="#about">À propos</a></li>
         <li><a href="#education">Formation</a></li>
-        <li><a href="#competences">Compétences</a></li>
         <li><a href="#experience">Expériences</a></li>
         <li><a href="#projects">Projets</a></li>
-        <li><a href="#skills">Outils</a></li>
-        <li><a href="#contact" class="nav__cta">Contact</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
 
-    <!-- ══════════════════════════ HERO ══════════════════════════ -->
     <section id="hero" class="hero">
       <div class="container">
-        <p class="hero__eyebrow">Portfolio // 2026</p>
-        <h1 class="hero__name">Jean-Baptiste<br><em>Catois</em></h1>
-        <p class="hero__role">
-          Ingénieur ENSICAEN — 1&nbsp;ère&nbsp;année<br>
-          Génie Physique &amp; Systèmes Embarqués — Apprentissage
+        <h1 class="hero__name">Jean-Baptiste Catois</h1>
+        <figure class="trace">
+          <svg class="trace__svg" id="traceSvg" viewBox="0 0 1000 160" preserveAspectRatio="none" role="img" aria-label="Courbe de mesure entourée de sa bande d'incertitude">
+            <line class="trace__axis" x1="0" y1="80" x2="1000" y2="80"/>
+            <g class="trace__scroller drift" id="traceScroller"></g>
+          </svg>
+        </figure>
+        <ul class="figures" role="list">
+          <li><span class="figures__v">800&nbsp;h</span><span class="figures__l">de TP au BUT Mesures Physiques</span></li>
+          <li><span class="figures__v">3</span><span class="figures__l">expériences en industrie</span></li>
+          <li><span class="figures__v">5</span><span class="figures__l">compétences du BUT validées</span></li>
+          <li><span class="figures__v">3&nbsp;ans</span><span class="figures__l">d'alternance en cours</span></li>
+        </ul>
+        <p class="hero__lead">
+          Je suis en première année d'ingénieur à l'ENSICAEN, en apprentissage chez Aptar Pharma Injectables.
+          J'y travaille au service Qualification/Validation, en environnement pharmaceutique réglementé (BPF/GMP).
         </p>
-        <p class="hero__status">
-          <span class="status-dot"></span>En alternance — Aptar Pharma Injectables — Qualification/Validation
-        </p>
-        <p class="hero__pitch">
-          Ingénieur apprenti en 1&nbsp;ère&nbsp;année à l'ENSICAEN, spécialité Génie Physique et Systèmes
-          Embarqués. J'interviens au sein du service Qualification/Validation d'Aptar Pharma Injectables
-          (Granville &amp; Brécey) dans un environnement pharmaceutique réglementé (BPF/GMP).
-        </p>
-        <div class="hero__ctas">
-          <a href="#projects" class="btn-editorial">Voir mes projets →</a>
-          <a href="assets/docs/CV_JeanBaptiste_Catois.pdf" class="btn-editorial btn-editorial--ghost" download>Télécharger le CV</a>
-          <a href="print/index.html" class="btn-editorial btn-editorial--ghost" target="_blank">Portfolio imprimable →</a>
+        <dl class="defs">
+          <div class="defs__row"><dt>Formation</dt><dd>ENSICAEN, Génie physique et systèmes embarqués (apprentissage)</dd></div>
+          <div class="defs__row"><dt>Entreprise</dt><dd>Aptar Pharma Injectables, Granville et Brécey</dd></div>
+          <div class="defs__row"><dt>Diplôme obtenu</dt><dd>BUT Mesures Physiques, juillet 2026</dd></div>
+        </dl>
+        <div class="hero__links">
+          <a href="assets/docs/CV_JeanBaptiste_Catois.pdf" class="btn" download>Télécharger le CV (PDF)</a>
+          <a href="#projects" class="link">Voir les projets</a>
+          <a href="print/index.html" class="link" target="_blank" rel="noopener">Version imprimable</a>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════ ABOUT ══════════════════════════ -->
-    <section id="about" class="section about">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 01</span>
-          <h2 class="section-heading__title">À propos</h2>
-        </header>
-
-        <div class="about__grid">
-
-          <div class="about__bio reveal">
-            <p>
-              Passionné par la physique appliquée et l'instrumentation, je suis actuellement en
-              1&nbsp;ère&nbsp;année à l'ENSICAEN, spécialité Génie Physique et Systèmes Embarqués,
-              par la voie de l'apprentissage. Mon cursus m'a apporté de solides bases en systèmes
-              embarqués, métrologie et traitement du signal.
-            </p>
-            <p>
-              En alternance chez Aptar Pharma Injectables (Granville &amp; Brécey), j'interviens
-              au service Qualification/Validation dans un environnement pharmaceutique réglementé
-              (BPF/GMP). Mes expériences précédentes chez Aptar (métrologie) et AXFIL (qualité ISO 13485)
-              m'ont forgé une culture industrielle de l'audit et de la rigueur documentaire.
-            </p>
-            <div class="about__lang-tags">
-              <span class="tag">FR — Natif</span>
-              <span class="tag">EN — B2 (CLES)</span>
-              <span class="tag">DE — A2</span>
-              <span class="tag">EFS — Donneur bénévole</span>
-            </div>
-          </div>
-
-          <div class="about__stats reveal">
-            <div class="about__stat">
-              <span class="about__stat-value">800h</span>
-              <span class="about__stat-label">de TP — BUT MP</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-value">3</span>
-              <span class="about__stat-label">expériences industrielles</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-value">5</span>
-              <span class="about__stat-label">compétences BUT validées</span>
-            </div>
-          </div>
-
-          <div class="about__interests reveal">
-            <p class="about__interests-title">Centres d'intérêt</p>
-            <ul class="interests-list">
-              <li>Judo — 13 ans de pratique</li>
-              <li>Clarinette &amp; orchestre au conservatoire — 13 ans</li>
-              <li>Scoutisme — 6 ans</li>
-              <li>Permis B — véhiculé</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ FORMATION ══════════════════════════ -->
-    <section id="education" class="section education">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 02</span>
-          <h2 class="section-heading__title">Formation</h2>
-        </header>
-
-        <article class="edu-item reveal">
-          <div class="grid-12">
-            <div class="col-date edu-date">
-              <span class="mono-label">Sept. 2026</span>
-              <span class="mono-label">2029 (prévu)</span>
-              <span class="mono-label">Caen</span>
-            </div>
-            <div class="col-main">
-              <h3 class="edu-title">ENSICAEN</h3>
-              <p class="edu-subtitle">École Nationale Supérieure d'Ingénieurs de Caen — 1&nbsp;ère&nbsp;année (en cours)</p>
-              <p class="edu-desc">
-                Formation d'ingénieur par l'apprentissage — Spécialité Génie Physique et Systèmes Embarqués.
-                École habilitée par la CTI. Alternance 3 ans avec Aptar Pharma Injectables (Granville &amp; Brécey).
-              </p>
-              <div class="tags">
-                <span class="tag">Génie physique</span>
-                <span class="tag">Systèmes embarqués</span>
-                <span class="tag">Apprentissage</span>
-                <span class="tag">CTI</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="edu-item reveal">
-          <div class="grid-12">
-            <div class="col-date edu-date">
-              <span class="mono-label">Sept. 2023</span>
-              <span class="mono-label">Juil. 2026</span>
-              <span class="mono-label">IUT de Caen, Campus 2</span>
-            </div>
-            <div class="col-main">
-              <h3 class="edu-title">BUT Mesures Physiques</h3>
-              <p class="edu-subtitle">Parcours Techniques de l'instrumentation (TI) — Diplômé juil. 2026</p>
-              <p class="edu-desc">
-                Formation de 3 ans alliant 800&nbsp;h de TP, 800&nbsp;h de TD et 400&nbsp;h de CM.
-                Électronique analogique et numérique, instrumentation, microcontrôleurs (STM32, ESP32, Raspberry Pi),
-                acquisition de données, traitement du signal, métrologie, optique et thermodynamique.
-                Programmation en C et Python. Solutions IoT et base de données InfluxDB.
-              </p>
-              <div class="tags">
-                <span class="tag">ESP32 / STM32</span>
-                <span class="tag">Python / C</span>
-                <span class="tag">Métrologie</span>
-                <span class="tag">Traitement du signal</span>
-                <span class="tag">IoT</span>
-                <span class="tag">Alternance</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="edu-item reveal">
-          <div class="grid-12">
-            <div class="col-date edu-date">
-              <span class="mono-label">Sept. 2020</span>
-              <span class="mono-label">Juin 2023</span>
-              <span class="mono-label">Caen</span>
-            </div>
-            <div class="col-main">
-              <h3 class="edu-title">Lycée Jean-Rostand</h3>
-              <p class="edu-subtitle">Baccalauréat Général — Mention BIEN</p>
-              <p class="edu-desc">
-                Spécialités : Mathématiques, Physique-Chimie et Mathématiques expertes.
-              </p>
-              <div class="tags">
-                <span class="tag">Mathématiques</span>
-                <span class="tag">Physique-Chimie</span>
-                <span class="tag">Maths expertes</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ COMPÉTENCES BUT ══════════════════════════ -->
-    <section id="competences" class="section competences">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 03</span>
-          <h2 class="section-heading__title">Compétences BUT — Parcours TI</h2>
-        </header>
-        <p class="section-sub reveal">
-          5 compétences structurantes du Bachelor Universitaire de Technologie Mesures Physiques,
-          développées sur 3 ans (6 semestres) dans le parcours Techniques d'instrumentation.
-        </p>
-
-        <article class="comp-item reveal">
-          <span class="comp-num">01</span>
-          <div class="comp-body">
-            <h3 class="comp-title">Mener une campagne de mesures</h3>
-            <p class="comp-desc">
-              Choisir une démarche scientifique adaptée, élaborer un protocole en respectant les normes
-              de sécurité, collecter et traiter les données de manière fiable, présenter les résultats
-              selon les normes et mettre en place des actions correctives.
-            </p>
-            <div class="level-tags">
-              <span class="level-tag">N1 — Grandeurs simples</span>
-              <span class="level-tag">N2 — Traitement complexe</span>
-              <span class="level-tag level-tag--active">N3 — Contexte pro</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="comp-item reveal">
-          <span class="comp-num">02</span>
-          <div class="comp-body">
-            <h3 class="comp-title">Déployer la métrologie et la démarche qualité</h3>
-            <p class="comp-desc">
-              Exprimer un résultat avec son incertitude (GUM), choisir et mettre en œuvre un instrument
-              selon ses caractéristiques métrologiques, utiliser des outils statistiques et assurer
-              la traçabilité et la fiabilité des mesures.
-            </p>
-            <div class="level-tags">
-              <span class="level-tag">N1 — Résultat de mesure</span>
-              <span class="level-tag">N2 — Instrument de mesure</span>
-              <span class="level-tag level-tag--active">N3 — Parc complet</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="comp-item reveal">
-          <span class="comp-num">03</span>
-          <div class="comp-body">
-            <h3 class="comp-title">Mettre en œuvre une chaîne de mesure et d'instrumentation</h3>
-            <p class="comp-desc">
-              Choisir les capteurs ou détecteurs adaptés, mettre en œuvre le transfert et le traitement
-              du signal (analogique/numérique), mettre en place la régulation et le pilotage de
-              l'instrumentation. Cœur du parcours TI.
-            </p>
-            <div class="level-tags">
-              <span class="level-tag">N1 — Chaîne simple</span>
-              <span class="level-tag">N2 — Mesure + régulation</span>
-              <span class="level-tag level-tag--active">N3 — Conditions extrêmes</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="comp-item reveal">
-          <span class="comp-num">04</span>
-          <div class="comp-body">
-            <h3 class="comp-title">Caractériser des grandeurs physico-chimiques et matériaux</h3>
-            <p class="comp-desc">
-              Identifier les grandeurs physiques et chimiques pertinentes, adapter la préparation
-              de l'échantillon, tenir compte de la structure de la matière et mettre en œuvre
-              les outils et techniques de caractérisation appropriés.
-            </p>
-            <div class="level-tags">
-              <span class="level-tag">N1 — Méthodes simples</span>
-              <span class="level-tag">N2 — Méthodes complexes</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="comp-item reveal">
-          <span class="comp-num">05</span>
-          <div class="comp-body">
-            <h3 class="comp-title">Définir un cahier des charges (démarche environnementale)</h3>
-            <p class="comp-desc">
-              Limiter les impacts environnementaux et énergétiques, mettre en œuvre une gestion
-              de projet pertinente, choisir les moyens techniques et métrologiques adaptés
-              et utiliser une communication adaptée aux parties prenantes.
-            </p>
-            <div class="level-tags">
-              <span class="level-tag">N1 — Mesure simple</span>
-              <span class="level-tag">N2 — Ensemble de mesures</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ EXPÉRIENCES ══════════════════════════ -->
-    <section id="experience" class="section experience">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 04</span>
-          <h2 class="section-heading__title">Expériences professionnelles</h2>
-        </header>
-
-        <article class="exp-item reveal">
-          <div class="grid-12">
-            <div class="col-content">
-              <h3 class="exp-company">APTAR PHARMA</h3>
-              <p class="exp-role">Alternant ingénieur Qualification/Validation</p>
-              <p class="exp-mission-title">Digitalisation du service — outils de suivi, d'analyse et de visualisation Q/V</p>
-              <p class="exp-desc">
-                Alternance de 3 ans au sein du service Qualification/Validation (sites de Granville et Brécey),
-                fabricant de composants pour l'industrie pharmaceutique réglementée (BPF/GMP).
-                Développement d'outils informatiques pour améliorer la collaboration et l'efficacité du service :
-                tableaux de bord Power BI (visualisation des délais, charges, activités de qualification par type/secteur/site),
-                plateforme de tickets pour le suivi des demandes, vue des sites compilant l'état qualifié des équipements
-                et les délais de requalification, outils d'analyse croisée avec la production et la maintenance.
-              </p>
-              <div class="tags">
-                <span class="tag">Power BI</span>
-                <span class="tag">Outils digitaux</span>
-                <span class="tag">BPF / GMP</span>
-                <span class="tag">Qualification</span>
-                <span class="tag">Pharma</span>
-                <span class="tag">Analyse de données</span>
-              </div>
-            </div>
-            <div class="col-aside exp-aside">
-              <span class="mono-label">Sept. 2026 — présent</span>
-              <span class="mono-label">Granville &amp; Brécey</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="exp-item reveal">
-          <div class="grid-12">
-            <div class="col-content">
-              <h3 class="exp-company">APTAR PHARMA</h3>
-              <p class="exp-role">Alternant Métrologie</p>
-              <p class="exp-mission-title">Rédaction d'un rationnel — Justification du fréquentiel de vérification</p>
-              <p class="exp-desc">
-                Rédaction d'un rationnel justifiant le fréquentiel de vérification par une analyse de
-                risques incluant l'évaluation de la criticité des fréquences de vérification actuelles.
-                Rédaction technique via la production de documents justificatifs (rationnels) pour valider
-                les changements de périodicité et assurer l'amélioration continue par l'optimisation du
-                plan de surveillance métrologique.
-              </p>
-              <div class="tags">
-                <span class="tag">Métrologie</span>
-                <span class="tag">Analyse de risques</span>
-                <span class="tag">Plan de surveillance</span>
-                <span class="tag">Pharma</span>
-              </div>
-            </div>
-            <div class="col-aside exp-aside">
-              <span class="mono-label">Oct. 2025 — Juil. 2026</span>
-              <span class="mono-label">Granville</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="exp-item reveal">
-          <div class="grid-12">
-            <div class="col-content">
-              <h3 class="exp-company">AXFIL</h3>
-              <p class="exp-role">Stagiaire Qualité</p>
-              <p class="exp-mission-title">Mission en validation et assurance qualité (ISO 13485)</p>
-              <p class="exp-desc">
-                Validation et assurance qualité selon la norme ISO&nbsp;13485 avec qualification
-                d'équipements par le déploiement et l'exécution des protocoles QI/QO/QP.
-                Préparation d'audit par la mise en conformité des processus. Amélioration continue
-                via l'analyse des processus de production pour identifier les écarts et optimiser
-                les flux. Gestion et suivi métrologique du parc d'instruments de mesure.
-              </p>
-              <div class="tags">
-                <span class="tag">ISO 13485</span>
-                <span class="tag">QI / QO / QP</span>
-                <span class="tag">Audit qualité</span>
-                <span class="tag">Dispositifs médicaux</span>
-                <span class="tag">Métrologie</span>
-              </div>
-            </div>
-            <div class="col-aside exp-aside">
-              <span class="mono-label">Avr. 2025 — Juin 2025</span>
-              <span class="mono-label">L'Aigle</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ PROJETS ══════════════════════════ -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 05</span>
-          <h2 class="section-heading__title">Projets</h2>
-        </header>
-
-        <article class="project-item reveal">
-          <div class="grid-12">
-            <div class="col-content project-content">
-              <span class="mono-label project-cat">SAÉ — IoT / Embarqué</span>
-              <h3 class="project-title">Station météo autonome</h3>
-              <span class="project-sub">Nov. 2024 — Mars 2025</span>
-              <p class="project-desc">
-                Développement d'une station météorologique autonome multi-capteurs (température, humidité,
-                particules fines, pression atmosphérique) pilotée par un microcontrôleur ESP32.
-                Programmation de la transmission sans fil des données vers une interface web dédiée
-                avec base de données InfluxDB. Intégration comme outil de démonstration pédagogique
-                pour le BUT Mesures Physiques.
-              </p>
-              <div class="tags">
-                <span class="tag">ESP32</span>
-                <span class="tag">C / Arduino</span>
-                <span class="tag">InfluxDB</span>
-                <span class="tag">IoT</span>
-                <span class="tag">Multi-capteurs</span>
-                <span class="tag">Wi-Fi</span>
-              </div>
-            </div>
-            <div class="col-aside project-aside">
-              <span class="project-num">01</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-item reveal">
-          <div class="grid-12">
-            <div class="col-content project-content">
-              <span class="mono-label project-cat">Analyse quantitative — Instrumentation</span>
-              <h3 class="project-title">Caractérisation de l'aluminium</h3>
-              <span class="project-sub">Janv. 2024 — Mars 2024</span>
-              <p class="project-desc">
-                Détermination du taux de pureté de l'aluminium ménager par dosage complexométrique
-                (EDTA) et titrage en retour. Mise en œuvre d'un protocole expérimental de chimie
-                analytique, calcul des incertitudes de mesure (GUM) pour valider la fiabilité des
-                résultats et analyse critique des teneurs obtenues par rapport aux standards industriels.
-              </p>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">GUM</span>
-                <span class="tag">Chimie analytique</span>
-                <span class="tag">EDTA</span>
-                <span class="tag">Incertitudes</span>
-                <span class="tag">Métrologie</span>
-              </div>
-            </div>
-            <div class="col-aside project-aside">
-              <span class="project-num">02</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ COMPÉTENCES TECHNIQUES ══════════════════════════ -->
-    <section id="skills" class="section skills">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 06</span>
-          <h2 class="section-heading__title">Compétences techniques</h2>
-        </header>
-
-        <div class="skills__list">
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Programmation</span>
-            <div class="skills__tags">
-              <span class="tag">Python</span>
-              <span class="tag">C</span>
-              <span class="tag">LaTeX</span>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Outils &amp; IDEs</span>
-            <div class="skills__tags">
-              <span class="tag">Arduino IDE</span>
-              <span class="tag">Spyder 6</span>
-              <span class="tag">Visual Studio</span>
-              <span class="tag">Pack Office 365</span>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Systèmes &amp; OS</span>
-            <div class="skills__tags">
-              <span class="tag">Windows</span>
-              <span class="tag">Debian</span>
-              <span class="tag">Ubuntu</span>
-              <span class="tag">Raspberry Pi OS</span>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Matériel &amp; Protocoles</span>
-            <div class="skills__tags">
-              <span class="tag">ESP32</span>
-              <span class="tag">STM32</span>
-              <span class="tag">Raspberry Pi</span>
-              <span class="tag">InfluxDB</span>
-              <span class="tag">IoT / Wi-Fi</span>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Métrologie &amp; Qualité</span>
-            <div class="skills__tags">
-              <span class="tag">GUM</span>
-              <span class="tag">ISO 13485</span>
-              <span class="tag">QI / QO / QP</span>
-              <span class="tag">BPF / GMP</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Analyse de risques</span>
-              <span class="tag">Traçabilité</span>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <span class="skills__group-title">Signal &amp; Instrumentation</span>
-            <div class="skills__tags">
-              <span class="tag">Traitement du signal</span>
-              <span class="tag">Acquisition de données</span>
-              <span class="tag">Électronique analogique</span>
-              <span class="tag">CEM</span>
-              <span class="tag">DAO</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <header class="section-heading reveal">
-          <span class="section-heading__label">// 07</span>
-          <h2 class="section-heading__title">Contact</h2>
-        </header>
-
-        <div class="contact__inner reveal">
-          <p class="contact__available">
-            <span class="status-dot"></span>En alternance — Aptar Pharma Injectables × ENSICAEN — depuis Sept. 2026
+    <section id="about" class="section">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="18"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">À propos</h2>
+        <div class="section__body">
+          <p>
+            J'ai fait trois ans de BUT Mesures Physiques à Caen : beaucoup de travaux pratiques en électronique,
+            en instrumentation et en métrologie, avec les microcontrôleurs (ESP32, STM32) et la programmation en C et en Python.
           </p>
+          <p style="margin-top:0.8rem">
+            Chez Aptar, j'ai d'abord travaillé en métrologie avant de passer à la qualification/validation.
+            Mon stage chez AXFIL m'a fait pratiquer l'ISO&nbsp;13485 et les protocoles QI/QO/QP.
+            Ce que j'aime dans ces métiers : un résultat n'est utile que si on sait dire à quel point on peut s'y fier.
+          </p>
+          <dl class="defs" style="margin-top:2rem">
+            <div class="defs__row"><dt>Langues</dt><dd>Français natif, anglais B2 (CLES), allemand A2</dd></div>
+            <div class="defs__row"><dt>Hors travail</dt><dd>Judo (13 ans), clarinette et orchestre au conservatoire (13 ans), scoutisme (6 ans), donneur bénévole à l'EFS</dd></div>
+            <div class="defs__row"><dt>Mobilité</dt><dd>Permis B, véhiculé</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="31"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">Formation</h2>
+        <div class="section__body">
+
+          <article class="entry">
+            <div class="entry__when">2026 – 2029 (prévu)<br>Caen</div>
+            <div>
+              <h3 class="entry__title">ENSICAEN</h3>
+              <p class="entry__sub">Première année en cours, école habilitée par la CTI</p>
+              <p>
+                Formation d'ingénieur par apprentissage, spécialité Génie physique et systèmes embarqués.
+                L'alternance dure trois ans chez Aptar Pharma Injectables (Granville et Brécey).
+              </p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry__when">2023 – 2026<br>IUT de Caen, Campus 2</div>
+            <div>
+              <h3 class="entry__title">BUT Mesures Physiques</h3>
+              <p class="entry__sub">Parcours Techniques de l'instrumentation, diplômé en juillet 2026</p>
+              <p>
+                Trois ans, avec 800&nbsp;h de TP, 800&nbsp;h de TD et 400&nbsp;h de CM : électronique analogique et numérique,
+                instrumentation, microcontrôleurs (STM32, ESP32, Raspberry Pi), acquisition de données,
+                traitement du signal, métrologie, optique et thermodynamique. Programmation en C et en Python,
+                solutions IoT avec la base de données InfluxDB.
+              </p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry__when">2020 – 2023<br>Caen</div>
+            <div>
+              <h3 class="entry__title">Lycée Jean-Rostand</h3>
+              <p class="entry__sub">Baccalauréat général, mention Bien</p>
+              <p>Spécialités mathématiques, physique-chimie et mathématiques expertes.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="44"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">Expériences</h2>
+        <div class="section__body">
+
+          <article class="entry">
+            <div class="entry__when">Depuis sept. 2026<br>Granville et Brécey</div>
+            <div>
+              <h3 class="entry__title">Aptar Pharma</h3>
+              <p class="entry__sub">Alternant ingénieur Qualification/Validation</p>
+              <p>
+                Alternance de trois ans au service Qualification/Validation, sur les sites de Granville et de Brécey.
+                Aptar fabrique des composants pour l'industrie pharmaceutique, soumise aux BPF/GMP.
+              </p>
+              <p>
+                Ma mission : numériser le suivi du service. Je construis des tableaux de bord Power BI
+                (délais, charge, activités de qualification par type, secteur et site), une plateforme de tickets
+                pour les demandes, une vue par site de l'état qualifié des équipements et des délais de requalification,
+                et des analyses croisées avec la production et la maintenance.
+              </p>
+              <p class="entry__tools">Power BI, BPF/GMP, qualification, analyse de données</p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry__when">Oct. 2025 – juil. 2026<br>Granville</div>
+            <div>
+              <h3 class="entry__title">Aptar Pharma</h3>
+              <p class="entry__sub">Alternant en métrologie</p>
+              <p>
+                J'ai rédigé un rationnel qui justifie la fréquence de vérification des instruments.
+                Il s'appuie sur une analyse de risques et sur la criticité des fréquences actuelles.
+                Ces documents servent à valider les changements de périodicité et à faire évoluer le plan de surveillance métrologique.
+              </p>
+              <p class="entry__tools">Métrologie, analyse de risques, plan de surveillance</p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry__when">Avr. – juin 2025<br>L'Aigle</div>
+            <div>
+              <h3 class="entry__title">AXFIL</h3>
+              <p class="entry__sub">Stagiaire qualité</p>
+              <p>
+                Mission de validation et d'assurance qualité selon l'ISO&nbsp;13485 : qualification d'équipements
+                avec écriture et exécution de protocoles QI/QO/QP, préparation d'audit, analyse des processus
+                de production pour repérer les écarts, et suivi métrologique du parc d'instruments de mesure.
+              </p>
+              <p class="entry__tools">ISO 13485, QI/QO/QP, audit, dispositifs médicaux</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="57"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">Projets</h2>
+        <div class="section__body">
+
+          <article class="entry">
+            <div class="entry__when">Nov. 2024 – mars 2025<svg class="mini" viewBox="0 0 160 60" aria-hidden="true" data-kind="weather"></svg></div>
+            <div>
+              <h3 class="entry__title">Station météo autonome</h3>
+              <p class="entry__sub">SAÉ, IoT et systèmes embarqués</p>
+              <p>
+                Une station météo multi-capteurs (température, humidité, particules fines, pression)
+                pilotée par un ESP32. Les mesures partent en Wi-Fi vers une interface web adossée à une base InfluxDB.
+                La station sert maintenant de démonstration pédagogique au BUT Mesures Physiques.
+              </p>
+              <p class="entry__tools">ESP32, C/Arduino, InfluxDB, Wi-Fi</p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry__when">Janv. – mars 2024<svg class="mini" viewBox="0 0 160 80" aria-hidden="true" data-kind="calib"></svg></div>
+            <div>
+              <h3 class="entry__title">Caractérisation de l'aluminium</h3>
+              <p class="entry__sub">Analyse quantitative, instrumentation</p>
+              <p>
+                Détermination de la pureté d'un aluminium ménager par dosage complexométrique à l'EDTA
+                et titrage en retour. J'ai écrit le protocole, calculé les incertitudes (GUM) pour juger de la fiabilité
+                des résultats, puis comparé les teneurs obtenues aux standards industriels.
+              </p>
+              <p class="entry__tools">Python, GUM, chimie analytique</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="competences" class="section">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="70"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">Compétences</h2>
+        <div class="section__body">
+
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Les cinq compétences du BUT, parcours TI</h3>
+          <p class="comp-intro">Elles sont évaluées sur trois niveaux au fil des six semestres.</p>
+
+          <article class="entry" style="grid-template-columns:1fr">
+            <div>
+              <h3 class="comp__title"><span class="comp__n">1</span>Mener une campagne de mesures</h3>
+              <p>Choisir une démarche scientifique, écrire un protocole en respectant les règles de sécurité, collecter et traiter les données, présenter les résultats selon les normes et proposer des actions correctives.</p>
+              <div class="gauge"><span class="gauge__bar" aria-hidden="true"><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span></span>Niveau 3 sur 3, en contexte professionnel</div>
+            </div>
+          </article>
+
+          <article class="entry" style="grid-template-columns:1fr">
+            <div>
+              <h3 class="comp__title"><span class="comp__n">2</span>Déployer la métrologie et la démarche qualité</h3>
+              <p>Exprimer un résultat avec son incertitude (GUM), choisir un instrument d'après ses caractéristiques métrologiques, utiliser des outils statistiques et assurer la traçabilité des mesures.</p>
+              <div class="gauge"><span class="gauge__bar" aria-hidden="true"><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span></span>Niveau 3 sur 3, sur un parc complet</div>
+            </div>
+          </article>
+
+          <article class="entry" style="grid-template-columns:1fr">
+            <div>
+              <h3 class="comp__title"><span class="comp__n">3</span>Mettre en œuvre une chaîne de mesure et d'instrumentation</h3>
+              <p>Choisir les capteurs, assurer le transfert et le traitement du signal (analogique et numérique), mettre en place la régulation et le pilotage. C'est le cœur du parcours TI.</p>
+              <div class="gauge"><span class="gauge__bar" aria-hidden="true"><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span></span>Niveau 3 sur 3, en conditions extrêmes</div>
+            </div>
+          </article>
+
+          <article class="entry" style="grid-template-columns:1fr">
+            <div>
+              <h3 class="comp__title"><span class="comp__n">4</span>Caractériser des grandeurs physico-chimiques et des matériaux</h3>
+              <p>Identifier les grandeurs pertinentes, préparer l'échantillon, tenir compte de la structure de la matière et choisir les techniques de caractérisation adaptées.</p>
+              <div class="gauge"><span class="gauge__bar" aria-hidden="true"><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg"></span></span>Niveau 2 sur 3, méthodes complexes</div>
+            </div>
+          </article>
+
+          <article class="entry" style="grid-template-columns:1fr">
+            <div>
+              <h3 class="comp__title"><span class="comp__n">5</span>Définir un cahier des charges, avec démarche environnementale</h3>
+              <p>Limiter les impacts environnementaux et énergétiques, gérer un projet, choisir les moyens techniques et métrologiques et adapter sa communication aux parties prenantes.</p>
+              <div class="gauge"><span class="gauge__bar" aria-hidden="true"><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg gauge__seg--on"></span><span class="gauge__seg"></span></span>Niveau 2 sur 3, ensemble de mesures</div>
+            </div>
+          </article>
+
+          <h3 style="font-size:1.15rem;margin:3rem 0 1rem">Outils</h3>
+          <dl class="defs">
+            <div class="defs__row"><dt>Programmation</dt><dd>Python, C, LaTeX</dd></div>
+            <div class="defs__row"><dt>Logiciels</dt><dd>Arduino IDE, Spyder, Visual Studio, Microsoft 365, Power BI</dd></div>
+            <div class="defs__row"><dt>Systèmes</dt><dd>Windows, Debian, Ubuntu, Raspberry Pi OS</dd></div>
+            <div class="defs__row"><dt>Matériel</dt><dd>ESP32, STM32, Raspberry Pi, InfluxDB</dd></div>
+            <div class="defs__row"><dt>Métrologie et qualité</dt><dd>GUM, ISO 13485, QI/QO/QP, BPF/GMP, analyse de risques, traçabilité</dd></div>
+            <div class="defs__row"><dt>Signal</dt><dd>Traitement du signal, acquisition de données, électronique analogique, CEM, DAO</dd></div>
+          </dl>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <div class="container"><svg class="strip" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true" data-seed="83"></svg></div>
+      <div class="container section__grid">
+        <h2 class="section__title">Contact</h2>
+        <div class="section__body">
           <a href="mailto:jbcatois@outlook.fr" class="contact__email">jbcatois@outlook.fr</a>
-          <a href="tel:+33783958603" class="contact__link-row">
-            <span class="contact__link-label">Téléphone</span>
-            07 83 95 86 03
-          </a>
-          <a href="https://linkedin.com/in/jean-baptiste-catois" target="_blank" rel="noopener noreferrer" class="contact__link-row">
-            <span class="contact__link-label">LinkedIn</span>
-            jean-baptiste-catois
-          </a>
+          <dl class="defs">
+            <div class="defs__row"><dt>Téléphone</dt><dd><a class="link" href="tel:+33783958603">07 83 95 86 03</a></dd></div>
+            <div class="defs__row"><dt>LinkedIn</dt><dd><a class="link" href="https://linkedin.com/in/jean-baptiste-catois" target="_blank" rel="noopener noreferrer">jean-baptiste-catois</a></dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
   <footer class="footer">
     <div class="container footer__inner">
       <span>Jean-Baptiste Catois</span>
       <span>&copy; <span id="year"></span></span>
-      <span>Hébergé sur GitHub Pages</span>
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="js/nav.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,112 +1,108 @@
-/* ─── Label mono ─── */
-.mono-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+/* ─── Liens et boutons ─── */
+.link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
-/* ─── Tags (plats, coins carrés) ─── */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
+.link:hover { text-decoration-thickness: 2px; }
 
-.tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.6rem;
-  letter-spacing: 0.04em;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.tag:hover {
-  color: var(--text);
-  border-color: var(--muted);
-}
-
-/* ─── Boutons éditoriaux (coins carrés, pas de shadow) ─── */
-.btn-editorial {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--text);
-  color: var(--text);
-  background: transparent;
-  transition: background 0.2s var(--ease), color 0.2s var(--ease);
-  cursor: pointer;
-}
-
-.btn-editorial:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
-.btn-editorial--ghost {
-  border-color: var(--border);
-  color: var(--muted);
-}
-
-.btn-editorial--ghost:hover {
-  border-color: var(--muted);
-  color: var(--text);
-  background: transparent;
-}
-
-/* ─── Point de statut pulsant ─── */
-.status-dot {
+.btn {
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4ade80;
-  flex-shrink: 0;
-  animation: dot-pulse 2.5s ease-in-out infinite;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  background: var(--blue);
+  color: var(--paper);
+  border: 1px solid var(--blue);
 }
 
-@keyframes dot-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.35; }
+.btn:hover { background: var(--ink); border-color: var(--ink); }
+
+/* ─── Listes de définitions (libellé | valeur) ─── */
+.defs { border-top: 1px solid var(--ink); }
+
+.defs__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  column-gap: 1.5rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-/* ─── Badges de niveau (compétences) ─── */
-.level-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.level-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+.defs dt {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
   color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.55rem;
-  letter-spacing: 0.04em;
 }
 
-.level-tag--active {
-  color: var(--text);
-  border-color: var(--muted);
+.defs dd { margin: 0; }
+
+/* ─── Entrées datées (formation, expériences) ─── */
+.entry {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  column-gap: 2rem;
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-/* ─── Animation reveal (scroll) ─── */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+.entry:first-child { padding-top: 0; }
+.entry:last-child  { border-bottom: 0; }
+
+.entry__when {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.entry__title {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.entry__sub {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.entry p + p { margin-top: 0.8rem; }
+
+.entry__tools {
+  margin-top: 0.9rem;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ─── Jauge de niveau ─── */
+.gauge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.gauge__bar { display: flex; gap: 3px; }
+
+.gauge__seg {
+  width: 1.5rem;
+  height: 0.5rem;
+  border: 1px solid var(--ink);
+}
+
+.gauge__seg--on { background: var(--blue); border-color: var(--blue); }
+
+@media (max-width: 600px) {
+  .defs__row { grid-template-columns: 1fr; }
+  .entry { grid-template-columns: 1fr; row-gap: 0.5rem; }
 }

@@ -1,17 +1,16 @@
 :root {
-  --bg:     #111111;
-  --text:   #e5e5e5;
-  --muted:  #999999;
-  --border: #333333;
-  --accent: #c8a87e; /* ambre chaud — utilisé avec parcimonie */
+  color-scheme: dark;
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --paper: #0c1a2e;
+  --ink:   #e7eef7;
+  --muted: #a5b5c9;
+  --rule:  #2b4260;
+  --blue:  #7db0ff;
 
-  --max-w:  1200px;
-  --pad:    clamp(1.25rem, 4vw, 2.5rem);
-  --nav-h:  56px;
+  --font-head: 'Archivo', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
 
-  --ease: cubic-bezier(0.25, 0, 0, 1);
+  --rail: 56px;
+  --pad:  clamp(1.25rem, 4vw, 2.5rem);
+  --nav-h: 52px;
 }
